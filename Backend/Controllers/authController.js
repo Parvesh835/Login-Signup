@@ -11,7 +11,7 @@ const signup = async (req, res) => {
         const existingUser = await UserModel.findOne({ email });
         if (existingUser) {
             return res.status(409)
-            .json({message: `User is already exist, you can't login`, success: false})
+            .json({message: `User is already exist, you can login`, success: false})
         }
         // creating new user model
         const user = new UserModel({ name, email, password });
